@@ -2,6 +2,7 @@
 
 echo $(git pull)
 
-if [[ $1 == 'already up to date' ]]; then
-    echo "We Have Nothing To Do . . ."
+if [[ $(git pull) == 'Already up to date.' ]]; then
+    echo "$(tput setaf 2)"We Have Nothing To Do . . ."$(tput sgr0)"
+    exit 1
 fi
